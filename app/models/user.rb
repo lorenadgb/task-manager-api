@@ -4,7 +4,7 @@ class User < ApplicationRecord
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :trackable, :validatable
 
-  attr_accessor :name
-
-  validates :name, presence: true
+  # attr_accessor :name
+  #
+  # validates :name, presence: true
 end
