@@ -8,6 +8,8 @@ class User < ApplicationRecord
   #
   # validates :name, presence: true
 
+  has_many :tasks, dependent: :destroy
+
   validates :auth_token, uniqueness: true
   before_create :generate_authentication_token!
 

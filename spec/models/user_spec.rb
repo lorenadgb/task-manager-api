@@ -3,6 +3,8 @@ require 'rails_helper'
 RSpec.describe User, type: :model do
   let(:user) { build(:user) }
 
+  it { is_expected.to have_many(:tasks).dependent(:destroy) }
+
   it { expect(user).to respond_to(:email) }
   it { expect(user).to respond_to(:password) }
   it { expect(user).to respond_to(:password_confirmation) }
